@@ -1,0 +1,5 @@
+.tox/
+*.egg-info/
+continuous_integration/reports/
+*.pyc
+tags
