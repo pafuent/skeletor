@@ -3,12 +3,12 @@ import cliff
 from {{ cookiecutter.project_slug }}.mixins import logger
 
 
-class DummyCommand(cliff.command.Command, logger.WithLogger):
+class {{ cookiecutter.cli_command.replace('-', '').replace('_', '') }}Command(cliff.command.Command, logger.WithLogger):
     def get_description(self):
-        return "A dummy command"
+        return "{{ cookiecutter.cli_command }} command"
 
     def get_parser(self, prog_name):
-        parser = super(DummyCommand, self).get_parser(prog_name)
+        parser = super({{ cookiecutter.cli_command.replace('-', '').replace('_', '') }}Command, self).get_parser(prog_name)
         parser.add_argument('aParameter', nargs='?', default='.')
         return parser
 

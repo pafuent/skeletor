@@ -31,7 +31,7 @@ if __name__ == "__main__":
                 '{{ cookiecutter.project_slug.replace('_', '-') }} = {{ cookiecutter.project_slug }}.commandline.{{ cookiecutter.project_slug }}:main',
             ],
             '{{ cookiecutter.project_slug }}.commandline.commands': [
-                'dummy = {{ cookiecutter.project_slug }}.commandline.commands.dummy:DummyCommand',
+                '{{ cookiecutter.cli_command }} = {{ cookiecutter.project_slug }}.commandline.commands.{{ cookiecutter.cli_command }}:{{ cookiecutter.cli_command.replace('-', '').replace('_', '') }}Command',
             ],
         },
     )
