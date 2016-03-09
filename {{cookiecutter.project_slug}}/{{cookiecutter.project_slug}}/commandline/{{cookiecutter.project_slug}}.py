@@ -4,8 +4,8 @@ from cliff.app import App
 from cliff.commandmanager import CommandManager
 
 
-class SkeletorCommandLine(App):  # pylint: disable=too-few-public-methods
-    """Skeletor command line application.
+class {{ cookiecutter.project_slug.replace('_', '').capitalize() }}CommandLine(App):  # pylint: disable=too-few-public-methods
+    """{{ cookiecutter.project_slug.capitalize() }} command line application.
     In order to add a new commands to this command line application, you need
     to create a class that inhitered from cliff.Command:
         import cliff
@@ -25,26 +25,26 @@ class SkeletorCommandLine(App):  # pylint: disable=too-few-public-methods
                 some.execute()
 
     Then add to your setup.py a new entry_point to this class in the
-    'skeletor.commandline.commands' namespace
+    '{{ cookiecutter.project_slug }}.commandline.commands' namespace
         setuptools.setup(
             .
             entry_points={
-                'skeletor.commandline.commands': [
+                '{{ cookiecutter.project_slug }}.commandline.commands': [
                     'new-command = path.to.new.command:NewCommand',
                 ],
             },
         )
     """
     def __init__(self):
-        super(SkeletorCommandLine, self).__init__(
+        super({{ cookiecutter.project_slug.replace('_', '').capitalize() }}CommandLine, self).__init__(
             description='',
-            version='0.1',
+            version='{{ cookiecutter.project_version }}',
             command_manager=CommandManager(
-                'skeletor.commandline.commands'),)
+                '{{ cookiecutter.project_slug }}.commandline.commands'),)
 
 
 def main(argv=sys.argv[1:]):
-    app = SkeletorCommandLine()
+    app = {{ cookiecutter.project_slug.replace('_', '').capitalize() }}CommandLine()
     return app.run(argv)
 
 if __name__ == '__main__':

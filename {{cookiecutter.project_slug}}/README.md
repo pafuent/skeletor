@@ -1,1 +1,1 @@
-# skeletor
+# {{ cookiecutter.project_name }}

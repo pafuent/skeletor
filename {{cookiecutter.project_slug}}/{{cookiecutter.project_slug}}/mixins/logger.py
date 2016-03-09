@@ -1,6 +1,6 @@
 import logging
 
-from skeletor import settings
+from {{ cookiecutter.project_slug }} import settings
 
 
 # pylint: disable=too-few-public-methods

@@ -10,7 +10,7 @@ USER_PATH = os.path.expanduser("~")
 #   The color names are black, red, green, yellow, blue, purple, cyan and white
 # bold, bold_{color}, fg_bold_{color}, bg_bold_{color}: Bold/bright colors.
 # reset: Clear all formatting (both foreground and background colors).
-LOGGER_NAME = 'skeletor'
+LOGGER_NAME = '{{ cookiecutter.project_slug }}'
 LOG_DIR = USER_PATH
 LOGGING = {
     'version': 1,

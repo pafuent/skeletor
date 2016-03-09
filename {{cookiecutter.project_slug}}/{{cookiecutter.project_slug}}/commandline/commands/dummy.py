@@ -1,6 +1,6 @@
 import cliff
 
-from skeletor.mixins import logger
+from {{ cookiecutter.project_slug }}.mixins import logger
 
 
 class DummyCommand(cliff.command.Command, logger.WithLogger):

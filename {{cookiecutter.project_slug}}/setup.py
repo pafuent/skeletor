@@ -15,10 +15,10 @@ REQS = [str(ir.req) for ir in PACKAGE_REQS]
 
 if __name__ == "__main__":
     setuptools.setup(
-        name="skeletor",
-        version="0.1",
-        description="",
-        author="pafuent",
+        name="{{ cookiecutter.project_slug }}",
+        version="{{ cookiecutter.project_version }}",
+        description="{{ cookiecutter.project_description }}",
+        author="{{ cookiecutter.author }}",
         packages=setuptools.find_packages(PACKAGE_PATH, exclude=["*.test",
                                                                  "*.test.*",
                                                                  "test.*",
@@ -28,10 +28,10 @@ if __name__ == "__main__":
         include_package_data=True,
         entry_points={
             'console_scripts': [
-                'skeletor = skeletor.commandline.skeletor:main',
+                '{{ cookiecutter.project_slug.replace('_', '-') }} = {{ cookiecutter.project_slug }}.commandline.{{ cookiecutter.project_slug }}:main',
             ],
-            'skeletor.commandline.commands': [
-                'dummy = skeletor.commandline.commands.dummy:DummyCommand',
+            '{{ cookiecutter.project_slug }}.commandline.commands': [
+                'dummy = {{ cookiecutter.project_slug }}.commandline.commands.dummy:DummyCommand',
             ],
         },
     )
